@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anke Stawicki | KI Workflow Engineer</title>
+    <meta
+      name="description"
+      content="Persönliche Projekt-Landingpage von Anke Stawicki – KI Workflow Engineer."
+    />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: [
+                'Inter',
+                'ui-sans-serif',
+                'system-ui',
+                '-apple-system',
+                'Segoe UI',
+                'Roboto',
+                'Helvetica Neue',
+                'Arial',
+                'Noto Sans',
+                'sans-serif',
+              ],
+            },
+            boxShadow: {
+              soft: '0 10px 30px -12px rgba(15, 23, 42, 0.15)',
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: linear-gradient(180deg, #fcfcfd 0%, #f4f8ff 100%);
+      }
+
+      .glass-card {
+        background: rgba(255, 255, 255, 0.82);
+        backdrop-filter: blur(4px);
+      }
+    </style>
+  </head>
+  <body class="text-slate-900 antialiased font-sans">
+    <div class="max-w-6xl mx-auto px-6 md:px-10 lg:px-14 py-10 md:py-14">
+      <!-- Hero -->
+      <section class="min-h-[72vh] flex items-center" id="hero">
+        <div class="w-full glass-card shadow-soft rounded-2xl p-8 md:p-12 lg:p-14 border border-white/70">
+          <p class="text-sm tracking-[0.2em] uppercase text-slate-500 mb-4">Portfolio 2026</p>
+          <h1 class="text-4xl md:text-6xl font-semibold tracking-tight leading-tight">Anke Stawicki</h1>
+          <h2 class="mt-4 text-xl md:text-2xl font-medium text-slate-700">KI Workflow Engineer</h2>
+          <p class="mt-6 text-lg md:text-xl text-slate-600 max-w-3xl leading-relaxed">
+            Ich entwickle intelligente, agentische Workflows, die Unternehmen von manuellen Prozessen zu skalierbaren KI-Systemen führen.
+          </p>
+          <a
+            href="#projekt"
+            class="inline-flex items-center gap-2 mt-9 px-6 py-3 rounded-2xl bg-slate-900 text-white text-sm md:text-base font-medium shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-xl"
+          >
+            Projekt ansehen
+            <i data-lucide="arrow-down" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </section>
+
+      <!-- Über mich -->
+      <section class="mt-14 md:mt-20" id="ueber-mich">
+        <div class="glass-card shadow-soft rounded-2xl p-8 md:p-12 border border-white/70">
+          <h3 class="text-2xl md:text-3xl font-semibold tracking-tight">Über mich</h3>
+          <div class="mt-7 grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10 items-start">
+            <div class="lg:col-span-2">
+              <p class="text-slate-700 text-base md:text-lg leading-relaxed">
+                Ich kombiniere Produktdenken mit technischer Tiefe, um KI-Lösungen von der Idee bis zur produktiven Automatisierung umzusetzen.
+                Mein Fokus liegt auf robusten Workflow-Architekturen, die schnell liefern und langfristig wartbar bleiben.
+              </p>
+              <p class="mt-4 text-slate-700 text-base md:text-lg leading-relaxed">
+                In Projekten arbeite ich praxisnah mit Teams zusammen und übersetze komplexe Anforderungen in klare, messbare Ergebnisse.
+              </p>
+
+              <div class="mt-7 flex flex-wrap gap-3">
+                <span class="px-4 py-2 rounded-full bg-slate-100 text-slate-700 text-sm font-medium">n8n</span>
+                <span class="px-4 py-2 rounded-full bg-slate-100 text-slate-700 text-sm font-medium">Make</span>
+                <span class="px-4 py-2 rounded-full bg-slate-100 text-slate-700 text-sm font-medium">RAG</span>
+                <span class="px-4 py-2 rounded-full bg-slate-100 text-slate-700 text-sm font-medium">Multi-Agent-Systeme</span>
+                <span class="px-4 py-2 rounded-full bg-slate-100 text-slate-700 text-sm font-medium">MCP</span>
+              </div>
+            </div>
+
+            <div class="rounded-2xl border border-slate-200/80 bg-gradient-to-br from-slate-50 to-slate-100 h-64 flex items-center justify-center text-slate-400 text-sm">
+              Foto-Platzhalter
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Das Projekt -->
+      <section class="mt-14 md:mt-20" id="projekt">
+        <div class="glass-card shadow-soft rounded-2xl p-8 md:p-12 border border-white/70">
+          <h3 class="text-2xl md:text-3xl font-semibold tracking-tight">AI-Agentic Consultant</h3>
+          <p class="mt-5 text-slate-700 text-base md:text-lg leading-relaxed max-w-4xl">
+            Ein modular aufgebautes Beratungssystem mit KI-Agenten, das Analyse, Strategie und Umsetzung in einem strukturierten Workflow vereint.
+            Ziel ist es, Entscheidungen datenbasiert zu beschleunigen und wiederkehrende Aufgaben intelligent zu automatisieren.
+          </p>
+
+          <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-5">
+            <article class="rounded-2xl border border-slate-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-soft">
+              <i data-lucide="bot" class="w-6 h-6 text-slate-700"></i>
+              <h4 class="mt-4 font-semibold text-lg">Agent-Orchestrierung</h4>
+              <p class="mt-2 text-slate-600 text-sm leading-relaxed">
+                Mehrere spezialisierte KI-Agenten arbeiten koordiniert für Recherche, Planung und Ausführung.
+              </p>
+            </article>
+
+            <article class="rounded-2xl border border-slate-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-soft">
+              <i data-lucide="workflow" class="w-6 h-6 text-slate-700"></i>
+              <h4 class="mt-4 font-semibold text-lg">Workflow-Automation</h4>
+              <p class="mt-2 text-slate-600 text-sm leading-relaxed">
+                End-to-End-Automatisierung vom Input bis zur Handlungsempfehlung in reproduzierbaren Prozessen.
+              </p>
+            </article>
+
+            <article class="rounded-2xl border border-slate-200 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-soft">
+              <i data-lucide="database-zap" class="w-6 h-6 text-slate-700"></i>
+              <h4 class="mt-4 font-semibold text-lg">RAG-Intelligenz</h4>
+              <p class="mt-2 text-slate-600 text-sm leading-relaxed">
+                Domänenspezifisches Wissen wird kontextsensitiv eingebunden, um präzise und nachvollziehbare Ergebnisse zu liefern.
+              </p>
+            </article>
+          </div>
+
+          <div class="mt-9 rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-50 to-slate-100 h-64 md:h-80 flex items-center justify-center text-slate-400 text-sm">
+            Screenshot-Platzhalter
+          </div>
+
+          <div class="mt-7 flex flex-wrap gap-3">
+            <span class="px-4 py-2 rounded-full bg-slate-900 text-white text-sm">OpenAI API</span>
+            <span class="px-4 py-2 rounded-full bg-slate-900 text-white text-sm">LangChain</span>
+            <span class="px-4 py-2 rounded-full bg-slate-900 text-white text-sm">n8n</span>
+            <span class="px-4 py-2 rounded-full bg-slate-900 text-white text-sm">Vector DB</span>
+            <span class="px-4 py-2 rounded-full bg-slate-900 text-white text-sm">JavaScript</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Kontakt -->
+      <section class="mt-14 md:mt-20 pb-4" id="kontakt">
+        <div class="glass-card shadow-soft rounded-2xl p-8 md:p-12 border border-white/70">
+          <h3 class="text-2xl md:text-3xl font-semibold tracking-tight">Kontakt</h3>
+          <p class="mt-4 text-slate-600">Lass uns über KI-Produkte, Automatisierung und agentische Systeme sprechen.</p>
+
+          <div class="mt-7 flex flex-wrap gap-4">
+            <a
+              href="mailto:anke.stawicki@example.com"
+              class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-white border border-slate-200 text-slate-800 font-medium transition-all duration-300 hover:-translate-y-0.5 hover:shadow-soft"
+            >
+              <i data-lucide="mail" class="w-4 h-4"></i>
+              E-Mail
+            </a>
+            <a
+              href="https://www.linkedin.com"
+              target="_blank"
+              rel="noreferrer"
+              class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-white border border-slate-200 text-slate-800 font-medium transition-all duration-300 hover:-translate-y-0.5 hover:shadow-soft"
+            >
+              <i data-lucide="linkedin" class="w-4 h-4"></i>
+              LinkedIn
+            </a>
+            <a
+              href="https://github.com"
+              target="_blank"
+              rel="noreferrer"
+              class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-white border border-slate-200 text-slate-800 font-medium transition-all duration-300 hover:-translate-y-0.5 hover:shadow-soft"
+            >
+              <i data-lucide="github" class="w-4 h-4"></i>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
