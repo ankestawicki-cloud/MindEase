@@ -91,10 +91,54 @@
       * {
         transition: background-color 300ms ease, color 300ms ease, border-color 300ms ease, box-shadow 300ms ease;
       }
+
+      .reveal-item {
+        opacity: 0;
+        transform: translateY(18px);
+        transition: opacity 700ms ease-out, transform 700ms ease-out;
+      }
+
+      .reveal-item.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .hero-step { opacity: 0; transform: translateY(10px); }
+      .hero-step.hero-visible {
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 700ms ease-out, transform 700ms ease-out;
+      }
+
+      .cta-btn:hover { transform: translateY(-2px) scale(1.05); }
+      .feature-card:hover { transform: translateY(-4px); box-shadow: 0 18px 38px -24px rgba(15, 23, 42, 0.45); }
+      .skill-tag:hover { animation: tiny-bounce 400ms ease-out; }
+      .contact-btn:hover i { transform: rotate(-8deg) scale(1.08); transition: transform 300ms ease-out; }
+
+      @keyframes tiny-bounce {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-3px); }
+        100% { transform: translateY(0); }
+      }
+
+      @keyframes bg-shift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+
+      body { background-size: 120% 120%; animation: bg-shift 28s ease-in-out infinite; }
+
+      @media (prefers-reduced-motion: reduce) {
+        *, .hero-step.hero-visible, .reveal-item { animation: none !important; transition-duration: 1ms !important; }
+        .reveal-item, .hero-step { opacity: 1 !important; transform: none !important; }
+      }
+
     </style>
   </head>
 
   <body class="font-sans text-ink dark:text-slate-100 antialiased">
+    <div id="scroll-progress" class="fixed top-0 left-0 h-[2px] bg-accent dark:bg-accentDark z-50 w-0"></div>
     <main class="max-w-6xl mx-auto px-6 md:px-10 lg:px-16 py-10 md:py-16">
       <nav class="flex justify-end mb-6">
         <button id="theme-toggle" aria-label="Dark Mode umschalten" class="inline-flex items-center gap-2 px-4 py-2 rounded-2xl border border-slate-200 dark:border-slate-600 bg-white/85 dark:bg-slate-800/80 text-slate-700 dark:text-slate-100 shadow-soft dark:shadow-none">
@@ -103,23 +147,23 @@
         </button>
       </nav>
 
-      <section id="hero" class="min-h-[70vh] flex items-center">
+      <section id="hero" class="min-h-[70vh] flex items-center reveal-section">
         <div class="w-full glass-card rounded-2xl border border-white/80 dark:border-slate-600/70 shadow-luxe dark:shadow-none p-8 md:p-12 lg:p-16">
           <p class="text-xs md:text-sm tracking-[0.28em] uppercase text-slate-500 dark:text-slate-400">Portfolio · 2026</p>
-          <h1 class="mt-4 text-4xl md:text-6xl leading-[1.02] tracking-tight font-semibold">Anke Stawicki</h1>
-          <h2 class="mt-4 text-xl md:text-2xl font-medium text-slate-700 dark:text-slate-200">KI Workflow Engineer</h2>
+          <h1 class="mt-4 text-4xl md:text-6xl leading-[1.02] tracking-tight font-semibold hero-step">Anke Stawicki</h1>
+          <h2 class="mt-4 text-xl md:text-2xl font-medium text-slate-700 dark:text-slate-200 hero-step">KI Workflow Engineer</h2>
           <p class="mt-7 max-w-3xl text-lg md:text-xl leading-relaxed text-slate-600 dark:text-slate-300">
             Ich entwerfe agentische KI-Systeme, die Strategie, Automatisierung und Umsetzung in einen präzisen, skalierbaren Workflow überführen.
           </p>
 
-          <a href="#projekt" class="inline-flex items-center gap-2 mt-10 px-7 py-3.5 rounded-2xl bg-ink dark:bg-slate-100 text-white dark:text-slate-900 text-sm md:text-base font-medium shadow-soft dark:shadow-none transition-all duration-300 hover:-translate-y-0.5 hover:shadow-luxe dark:hover:bg-white">
+          <a href="#projekt" class="inline-flex items-center gap-2 mt-10 px-7 py-3.5 rounded-2xl hero-step cta-btn bg-ink dark:bg-slate-100 text-white dark:text-slate-900 text-sm md:text-base font-medium shadow-soft dark:shadow-none transition-all duration-300 hover:-translate-y-0.5 hover:shadow-luxe dark:hover:bg-white">
             Projekt ansehen
             <i data-lucide="arrow-down" class="w-4 h-4"></i>
           </a>
         </div>
       </section>
 
-      <section class="mt-14 md:mt-20" id="ueber-mich">
+      <section class="mt-14 md:mt-20 reveal-section" id="ueber-mich">
         <div class="glass-card shadow-soft dark:shadow-none rounded-2xl p-8 md:p-12 border border-white/70 dark:border-slate-600/70">
           <h2 class="text-2xl md:text-3xl font-semibold tracking-tight headline-accent">Über mich</h2>
           <div class="mt-7 grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10 items-start">
@@ -132,11 +176,11 @@
               </p>
 
               <div class="mt-7 flex flex-wrap gap-3">
-                <span class="px-4 py-2 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium">n8n</span>
-                <span class="px-4 py-2 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium">Make</span>
-                <span class="px-4 py-2 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium">RAG</span>
-                <span class="px-4 py-2 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium">Multi-Agent-Systeme</span>
-                <span class="px-4 py-2 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium">MCP</span>
+                <span class="px-4 py-2 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium skill-tag">n8n</span>
+                <span class="px-4 py-2 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium skill-tag">Make</span>
+                <span class="px-4 py-2 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium skill-tag">RAG</span>
+                <span class="px-4 py-2 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium skill-tag">Multi-Agent-Systeme</span>
+                <span class="px-4 py-2 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium skill-tag">MCP</span>
               </div>
             </div>
 
@@ -147,7 +191,7 @@
         </div>
       </section>
 
-      <section id="projekt" class="mt-16 md:mt-24">
+      <section id="projekt" class="mt-16 md:mt-24 reveal-section">
         <div class="glass-card rounded-2xl border border-white/80 dark:border-slate-600/70 shadow-soft dark:shadow-none p-8 md:p-12">
           <h3 class="inline-block text-2xl md:text-3xl font-semibold tracking-tight headline-accent">AI-Agentic Consultant</h3>
           <p class="mt-7 text-base md:text-lg text-slate-700 dark:text-slate-300 leading-relaxed max-w-4xl">
@@ -156,17 +200,17 @@
           </p>
 
           <div class="mt-9 grid grid-cols-1 md:grid-cols-3 gap-5">
-            <article class="rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-600 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-soft dark:hover:shadow-none">
+            <article class="rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-600 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-soft dark:hover:shadow-none feature-card">
               <i data-lucide="bot" class="w-6 h-6 text-accent dark:text-accentDark"></i>
               <h4 class="mt-4 text-lg font-semibold">Agent-Orchestrierung</h4>
               <p class="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Spezialisierte Agenten übernehmen Research, Bewertung und Handlungsempfehlung im Zusammenspiel.</p>
             </article>
-            <article class="rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-600 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-soft dark:hover:shadow-none">
+            <article class="rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-600 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-soft dark:hover:shadow-none feature-card">
               <i data-lucide="workflow" class="w-6 h-6 text-accent dark:text-accentDark"></i>
               <h4 class="mt-4 text-lg font-semibold">Workflow-Automation</h4>
               <p class="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Automatisierte Prozesse von Input bis Entscheidungsgrundlage – transparent und reproduzierbar.</p>
             </article>
-            <article class="rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-600 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-soft dark:hover:shadow-none">
+            <article class="rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-600 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-soft dark:hover:shadow-none feature-card">
               <i data-lucide="database-zap" class="w-6 h-6 text-accent dark:text-accentDark"></i>
               <h4 class="mt-4 text-lg font-semibold">RAG-Intelligenz</h4>
               <p class="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Kontextsensitives Wissen ermöglicht präzise Antworten mit klarer Quellenbasis.</p>
@@ -194,21 +238,21 @@
         </div>
       </section>
 
-      <section id="kontakt" class="mt-16 md:mt-24 pb-6">
+      <section id="kontakt" class="mt-16 md:mt-24 pb-6 reveal-section">
         <div class="glass-card rounded-2xl border border-white/80 dark:border-slate-600/70 shadow-soft dark:shadow-none p-8 md:p-12">
           <h3 class="inline-block text-2xl md:text-3xl font-semibold tracking-tight headline-accent">Kontakt</h3>
           <p class="mt-6 text-slate-600 dark:text-slate-300">Ich freue mich auf den Austausch zu KI-Workflows, Produktisierung und skalierbaren Agentensystemen.</p>
 
           <div class="mt-8 flex flex-wrap gap-4">
-            <a href="mailto:anke.stawicki@example.com" class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-600 text-slate-800 dark:text-slate-100 font-medium transition-all duration-300 hover:-translate-y-0.5 hover:shadow-soft dark:hover:shadow-none">
+            <a href="mailto:anke.stawicki@example.com" class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-600 text-slate-800 dark:text-slate-100 font-medium transition-all duration-300 hover:-translate-y-0.5 hover:shadow-soft dark:hover:shadow-none contact-btn">
               <i data-lucide="mail" class="w-4 h-4"></i>
               E-Mail
             </a>
-            <a href="https://www.linkedin.com/in/anke-stawicki-ai" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-600 text-slate-800 dark:text-slate-100 font-medium transition-all duration-300 hover:-translate-y-0.5 hover:shadow-soft dark:hover:shadow-none">
+            <a href="https://www.linkedin.com/in/anke-stawicki-ai" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-600 text-slate-800 dark:text-slate-100 font-medium transition-all duration-300 hover:-translate-y-0.5 hover:shadow-soft dark:hover:shadow-none contact-btn">
               <i data-lucide="linkedin" class="w-4 h-4"></i>
               LinkedIn · Anke Stawicki AI
             </a>
-            <a href="https://github.com" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-600 text-slate-800 dark:text-slate-100 font-medium transition-all duration-300 hover:-translate-y-0.5 hover:shadow-soft dark:hover:shadow-none">
+            <a href="https://github.com" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-600 text-slate-800 dark:text-slate-100 font-medium transition-all duration-300 hover:-translate-y-0.5 hover:shadow-soft dark:hover:shadow-none contact-btn">
               <i data-lucide="github" class="w-4 h-4"></i>
               GitHub
             </a>
@@ -236,6 +280,40 @@
         localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
         updateIcon();
       });
+
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const progressBar = document.getElementById('scroll-progress');
+      const updateScrollProgress = () => {
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        const pct = max > 0 ? (window.scrollY / max) * 100 : 0;
+        progressBar.style.width = pct + '%';
+      };
+      window.addEventListener('scroll', updateScrollProgress, { passive: true });
+      updateScrollProgress();
+
+      if (!reducedMotion) {
+        const heroSteps = document.querySelectorAll('.hero-step');
+        heroSteps.forEach((el, idx) => setTimeout(() => el.classList.add('hero-visible'), 150 * (idx + 1)));
+
+        document.querySelectorAll('.reveal-section').forEach((section) => {
+          const targets = [section, ...section.querySelectorAll('.feature-card, .skill-tag, .contact-btn')];
+          targets.forEach((el) => el.classList.add('reveal-item'));
+        });
+
+        const observer = new IntersectionObserver((entries, obs) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            const el = entry.target;
+            el.classList.add('is-visible');
+            obs.unobserve(el);
+          });
+        }, { threshold: 0.14 });
+
+        document.querySelectorAll('.reveal-item').forEach((el, idx) => {
+          el.style.transitionDelay = `${Math.min((idx % 6) * 90, 360)}ms`;
+          observer.observe(el);
+        });
+      }
     </script>
   </body>
 </html>
