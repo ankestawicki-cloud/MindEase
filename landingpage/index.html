@@ -50,6 +50,11 @@
         backdrop-filter: blur(10px);
       }
 
+      .glass-card {
+        background: rgba(255, 255, 255, 0.82);
+        backdrop-filter: blur(10px);
+      }
+
       .headline-accent {
         position: relative;
       }
@@ -88,33 +93,33 @@
         </div>
       </section>
 
-      <section id="ueber-mich" class="mt-16 md:mt-24">
-        <div class="glass rounded-2xl border border-white/80 shadow-soft p-8 md:p-12">
-          <h3 class="inline-block text-2xl md:text-3xl font-semibold tracking-tight headline-accent">Über mich</h3>
-          <div class="mt-9 grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-start">
-            <div class="lg:col-span-2">
-              <p class="text-base md:text-lg text-slate-700 leading-relaxed">
-                Ich verbinde technische Exzellenz mit Business-Verständnis und übersetze komplexe Anforderungen in klare KI-Produkte.
-              </p>
-              <p class="mt-4 text-base md:text-lg text-slate-700 leading-relaxed">
-                Von der Konzeption bis zur produktiven Umsetzung begleite ich Projekte mit Fokus auf Wirkung, Qualität und nachhaltige Skalierung.
-              </p>
+      <section class="mt-14 md:mt-20" id="ueber-mich">
+  <div class="glass-card shadow-soft rounded-2xl p-8 md:p-12 border border-white/70">
+    <h2 class="text-2xl md:text-3xl font-semibold tracking-tight">Über mich</h2>
+    <div class="mt-7 grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10 items-start">
+      <div class="lg:col-span-2">
+        <p class="text-slate-700 text-base md:text-lg leading-relaxed">
+          Ich kombiniere Produktdenken mit technischer Tiefe, um KI-Lösungen von der Idee bis zur produktiven Automatisierung umzusetzen.
+        </p>
+        <p class="mt-4 text-slate-700 text-base md:text-lg leading-relaxed">
+          In Projekten arbeite ich praxisnah mit Teams zusammen und übersetze komplexe Anforderungen in klare, messbare Ergebnisse.
+        </p>
 
-              <div class="mt-8 flex flex-wrap gap-3">
-                <span class="px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-700 text-sm font-medium">n8n</span>
-                <span class="px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-700 text-sm font-medium">Make</span>
-                <span class="px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-700 text-sm font-medium">RAG</span>
-                <span class="px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-700 text-sm font-medium">Multi-Agent-Systeme</span>
-                <span class="px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-700 text-sm font-medium">MCP</span>
-              </div>
-            </div>
-
-            <div class="h-72 rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-slate-100 flex items-center justify-center text-slate-400 text-sm">
-              Foto-Platzhalter
-            </div>
-          </div>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <span class="px-4 py-2 rounded-full bg-slate-100 text-slate-700 text-sm font-medium">n8n</span>
+          <span class="px-4 py-2 rounded-full bg-slate-100 text-slate-700 text-sm font-medium">Make</span>
+          <span class="px-4 py-2 rounded-full bg-slate-100 text-slate-700 text-sm font-medium">RAG</span>
+          <span class="px-4 py-2 rounded-full bg-slate-100 text-slate-700 text-sm font-medium">Multi-Agent-Systeme</span>
+          <span class="px-4 py-2 rounded-full bg-slate-100 text-slate-700 text-sm font-medium">MCP</span>
         </div>
-      </section>
+      </div>
+
+      <div class="rounded-2xl border border-slate-200/80 bg-gradient-to-br from-slate-50 to-slate-100 h-64 flex items-center justify-center text-slate-400 text-sm">
+        Foto-Platzhalter
+      </div>
+    </div>
+  </div>
+</section>
 
       <section id="projekt" class="mt-16 md:mt-24">
         <div class="glass rounded-2xl border border-white/80 shadow-soft p-8 md:p-12">
